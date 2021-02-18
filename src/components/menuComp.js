@@ -27,17 +27,10 @@ class Menu extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/detail" className="nav-link" href="#">
-                  Movie Detail
-                </Link>
-              </li>
-
-              <li className="nav-item">
                 <Link to="/about" className="nav-link" aria-current="page">
                   About
                 </Link>
               </li>
-
               <li className="nav-item">
                 <Link to="/addnew" className="nav-link" href="#">
                   Add Movie
