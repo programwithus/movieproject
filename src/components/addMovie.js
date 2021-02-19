@@ -21,13 +21,9 @@ class AddMovie extends Component {
     formData.append("actor", this.state.actor);
     formData.append("rating", this.state.rating);
     axios
-      .post("http://161.35.176.70/movies", {
-        formData,
-        headers: {
-          "content-type": "multipart/form-data",
-        },
+      .post("http://161.35.176.70/movies", formData, {
+        headers: { "content-type": "multipart/form-data" },
       })
-
       .then((response) => console.log(response));
   }
 
