@@ -4,7 +4,7 @@ import axios from "axios";
 class AddMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = { title: "", genre: "", actor: "", rating: "" };
+    this.state = { title: "", genre: "", actor: "", rating: "", image: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,6 +14,11 @@ class AddMovie extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("files", this.state.image);
+    formData.append("genre", this.state.genre);
+    formData.append("actor", this.state.actor);
+    formData.append("rating", this.state.rating);
     axios
       .post("http://161.35.176.70/movies", {
         title: this.state.title,
@@ -92,7 +97,21 @@ class AddMovie extends Component {
               />
             </div>
           </div>
-
+          <div className="row mb-3">
+            <label htmlFor="image" className="col-sm-2 col-form-label">
+              Image
+            </label>
+            <div className="col-sm-10">
+              <input
+                type="file"
+                name="image"
+                onChange={this.handleChange}
+                alt="image"
+                id="image"
+                value={this.state.image}
+              />
+            </div>
+          </div>
           <button
             onClick={this.handleSubmit}
             type="submit"
