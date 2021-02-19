@@ -15,6 +15,7 @@ class AddMovie extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData();
+    console.log("--->", this.state.image);
     formData.append("files", this.state.image);
     formData.append("genre", this.state.genre);
     formData.append("actor", this.state.actor);
