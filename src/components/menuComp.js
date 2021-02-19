@@ -7,7 +7,7 @@ class Menu extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"></a>
+          <a className="navbar-brand"></a>
           <button
             className="navbar-toggler"
             type="button"
